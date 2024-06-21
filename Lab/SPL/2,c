@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+
+    int A = 3; int B = 0;
+    int *P = &A; int *Q = &P; int *R = &B;
+    printf("Enter value:"); 
+    scanf("%d",R);
+    printf("%d %d\n",A,B); 
+}

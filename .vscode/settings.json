@@ -1,0 +1,10 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "array": "c",
+        "initializer_list": "c",
+        "utility": "c",
+        "stdio.h": "c",
+        "2_deletion.C": "cpp"
+    }
+}
