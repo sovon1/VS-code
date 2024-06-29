@@ -1,4 +1,3 @@
-//in this program we will maintain another pointer : tail
 #include<stdio.h>
 #include<stdlib.h>
 struct node
