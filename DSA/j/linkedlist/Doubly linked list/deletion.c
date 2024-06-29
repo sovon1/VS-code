@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 struct node 
 {
     int data;
@@ -44,9 +45,32 @@ void display(struct node *head)
         temp = temp->next;
     }
 }
+void delFromBeg(struct node **head)
+{
+    if(*head==NULL)
+    {
+        printf("The list is empty");
+
+    }
+
+    else{
+    temp = *head;
+    *head = (*head)->next;
+    (*head)->prev = NULL;
+    free(temp);
+    }
+
+}
+delFromEnd(struct node **tail)
+{
+    *temp = tail;
+    
+}
 int main()
 {
    create(&head);
    display(head);
-   
+   printf("\n");
+   delFromBeg(&head);
+   display(head);
 }
