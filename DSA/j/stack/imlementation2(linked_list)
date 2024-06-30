@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Define the structure for a node in the linked list
+struct node {
+    int data;
+    struct node *link;
+} *top = NULL;
+
+// Function to push an element onto the stack
+void push(int x) {
+    struct node *newNode = (struct node *)malloc(sizeof(struct node));
+    if (newNode == NULL) {
+        printf("Memory allocation failed\n");
+        return;
+    }
+    newNode->data = x;
+    newNode->link = top;
+    top = newNode;
+    printf("Pushed %d onto the stack\n", x);
+}
+
+// Function to display all elements in the stack
+void display() {
+    struct node *temp = top;
+    if (temp == NULL) {
+        printf("The stack is empty\n");
+        return;
+    }
+    printf("Stack elements: ");
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->link;
+    }
+    printf("\n");
+}
+
+// Function to peek at the top element of the stack
+void peek() {
+    if (top == NULL) {
+        printf("The stack is empty\n");
+    } else {
+        printf("The top element is %d\n", top->data);
+    }
+}
+
+// Function to pop the top element from the stack
+void pop() {
+    if (top == NULL) {
+        printf("Underflow: The stack is empty\n");
+        return;
+    }
+    struct node *temp = top;
+    printf("Popped element is %d\n", top->data);
+    top = top->link;
+    free(temp);
+}
+
+// Main function to demonstrate stack operations
+int main() {
+    // Demonstrate pushing elements onto the stack
+    push(4);
+    push(5);
+    push(6);
+
+    printf("\n");
+
+    // Display stack elements
+    display();
+    
+    printf("\n");
+
+    // Peek at the top element of the stack
+    peek();
+    
+    printf("\n");
+
+    // Pop an element from the stack
+    pop();
+    
+    printf("\n");
+
+    // Peek at the top element again
+    peek();
+    
+    printf("\n");
+
+    // Display the stack elements again
+    display();
+    
+    return 0;
+}
