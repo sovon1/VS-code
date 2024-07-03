@@ -189,17 +189,19 @@ struct node* deleteElement(struct node *root, int val) {
     } else if (val > root->data) {
         root->right = deleteElement(root->right, val);
     } else {
-        if (root->left == NULL) {
+        if (root->left == NULL) { //this one have one child yk the rules nh?  (that's what she said ....hahhahahha)
+          //replace with that child
             struct node *temp = root->right;
             free(root);
             return temp;
-        } else if (root->right == NULL) {
+        } else if (root->right == NULL) { //also one
             struct node *temp = root->left;
             free(root);
             return temp;
         }
+        //here comes the point if they have two child 
 
-        struct node *temp = findSmallestElement(root->right);
+        struct node *temp = findSmallestElement(root->right); //performing in order successor
         root->data = temp->data;
         root->right = deleteElement(root->right, temp->data);
     }
