@@ -11,19 +11,16 @@ struct node *left;
 struct node *right;
 };
 struct node *tree;
+//these are all the function prototype
 void create_tree(struct node *);
 struct node *insertElement(struct node *, int);
-void preorderTraversal(struct node *);
-void inorderTraversal(struct node *);
-
-
-
-
-void postorderTraversal(struct node *);
+void preorderTraversal(struct node *);//follow your own code before
+void inorderTraversal(struct node *); //follow your own code before
+void postorderTraversal(struct node *);//follow your own code before
 struct node *findSmallestElement(struct node *);
 struct node *findLargestElement(struct node *);
 struct node *deleteElement(struct node *, int);
-struct node *mirrorImage(struct node *);
+struct node *mirrorImage(struct node *);//p
 int totalNodes(struct node *);
 int totalExternalNodes(struct node *);
 int totalInternalNodes(struct node *);
@@ -57,9 +54,9 @@ scanf("%d", &option);
 switch(option)
 {
 case 1:
-printf("\n Enter the value of the new node : ");
+printf("\n Enter the value of the new node : "); //you could take the value there too
 scanf("%d", &val);
-tree = insertElement(tree, val);
+tree = insertElement(tree, val); //you used root 
 break;
 case 2:
 printf("\n The elements of the tree are : \n");
@@ -84,11 +81,6 @@ break;
 case 7:
 printf("\n Enter the element to be deleted : ");
 scanf("%d", &val);
-
-
-
-
-
 tree = deleteElement(tree, val);
 break;
 case 8:
