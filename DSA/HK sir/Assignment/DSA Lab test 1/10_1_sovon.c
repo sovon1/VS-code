@@ -200,7 +200,8 @@ struct node* deleteElement(struct node *root, int val) {
             return temp;
         }
         //here comes the point if they have two child 
-
+       
+      
         struct node *temp = findSmallestElement(root->right); //performing in order successor
         root->data = temp->data;
         root->right = deleteElement(root->right, temp->data);

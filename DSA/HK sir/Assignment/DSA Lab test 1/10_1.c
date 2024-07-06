@@ -4,6 +4,7 @@ in the preceding sections.*/
 #include <stdio.h>
 #include <conio.h>
 #include <malloc.h>
+#include<stdlib.h>
 struct node
 {
 int data;
