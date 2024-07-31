@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+void print(int num){
+    cout<<num<<endl;
+    return;//return nothing as it is void
+}
+int add(int num1,int num2) //this function receieved value of a and b
+{
+    print(num1);
+    print(num2);
+    int sum  = num1 + num2;
+    return sum; //returned sum to the called function;
+}
+int main()
+{
+    int a = 2;
+    int b = 3;
+    cout<<add(a,b)<<endl;//calling add function
+    return 0;
+}

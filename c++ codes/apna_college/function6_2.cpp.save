@@ -1,0 +1,41 @@
+//print prime numbers between ranges
+//this one is gem
+#include<iostream>
+#include<math.h>
+
+using namespace std;
+//value received here
+bool isPrime(int num) //isPrime itself a function
+//bool either will return true or false
+{
+
+    int i;
+    for ( i = 2; i <= sqrt(num); i++)//i will stA
+    {
+        if(num%i==0)
+        return false;
+    }
+    //no need to add break because if it found false it will return the value and get out of the function if it did't then it will return true
+
+    return true; //will pass one to the if conditon
+
+}
+int main()
+{
+    //taking input
+    int a ;
+    int b ;
+    int i;
+    cin>>a>>b;
+    //loop to check between the ranges
+    for(i=a;i<=b;i++)
+    {
+        if(isPrime(i)) //sent to the function to do our work easily
+        {
+            cout<<i<<' '<<" is a prime number "<<endl;
+        }
+    }
+    return 0;
+
+}
+

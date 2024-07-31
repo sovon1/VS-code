@@ -191,7 +191,7 @@ int main() {
    int location;
 
    // Create the linked list
-   createList(&head);
+   createList(&head); //using double pointer hudai
 
    // Display the linked list
    displayList(head);

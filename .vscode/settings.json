@@ -5,6 +5,8 @@
         "initializer_list": "c",
         "utility": "c",
         "stdio.h": "c",
-        "2_deletion.C": "cpp"
+        "2_deletion.C": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }

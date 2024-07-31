@@ -1,0 +1,49 @@
+//binary search (the time complexity is lower here)
+//O(log 2 base power 1)
+#include<iostream>
+using namespace std;
+
+int binarySearch(int array[],int n,int key)
+{
+   int starting = 0;
+   int ending = n;
+   
+   while (starting<=ending)
+   {
+      int mid = (starting+ending)/2;
+      if (array[mid]==key)
+      {
+        return mid;
+      }
+      else if (array[mid]>key)
+      {
+           ending = mid-1;
+      }
+      else
+      {                        
+        starting = mid +1 ;
+      }
+      
+   }
+   return -1;
+   
+
+}
+int main()
+{
+    int n;
+
+    
+    cin>>n;
+    int array[n];
+    for ( int i = 0; i < n; i++)
+    {
+        cin>>array[i];
+    }
+
+    int key;
+    cin>>key;
+
+   cout<<binarySearch(array,n,key);
+      
+}
