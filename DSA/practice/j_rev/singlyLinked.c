@@ -74,6 +74,24 @@ void insertionAfterAspecific(struct node **head,int location)
     newNode->next = temp->next;
     temp->next=newNode;
 }
+void deletionFromBeg(struct node **head)
+{
+    //you can add a bit of condition here
+    struct node *temp =*head;
+    temp= temp->next;
+    *head=temp;
+}
+void deletionFromEnd(struct node **head)
+{
+    struct node *temp = *head;
+    while(temp->next->next!=NULL)
+    {
+        temp= temp->next;
+    }
+    struct node *temp2=temp->next;
+    temp->next=NULL;
+    free(temp2);
+}
 int main()
 {
     struct node *head = NULL;
@@ -93,7 +111,11 @@ printf("Enter the location you want to insert : ");
 scanf("%d",&location);
 insertionAfterAspecific(&head,location);
 display(head);
-
-
-
+n
+//let's perform deletion here
+deletionFromBeg(&head);
+display(head);
+n
+deletionFromEnd(&head);
+display(head);
 }
