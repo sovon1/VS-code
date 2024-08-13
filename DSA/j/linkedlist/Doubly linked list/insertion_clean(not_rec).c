@@ -69,7 +69,7 @@ void insertionAtEnd(struct node **tail) {
         head = *tail = newnode;
     }
 }
-
+//finding the length of the LL
 int length(struct node *head) {
     int len = 0;
     struct node *temp = head;

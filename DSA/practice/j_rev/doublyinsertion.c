@@ -46,14 +46,52 @@ void display(struct node *head)
         temp = temp->next;
     }
 }   
+void insertionAtTheBeg(struct node **head)
+{
+  struct node *newNode;
+  newNode = (struct node*)malloc(sizeof(struct node));
+  printf("Enter data to be inserted : ");
+  scanf("%d",&newNode->data);
+newNode->next=*head;
+newNode->prev=NULL;
+*head=newNode;
+}
+void insertionAfterPos(struct node **head)
+{
+  struct node *temp,*newNode;
+  temp=*head;
+  printf("Enter pos: ");
+  int pos;int i=1;
+  scanf("%d",&pos);
+ 
 
+  //performation will be after pos(you can perform at pos too)
+  while (i<pos)
+  {
+     temp=temp->next;
+    i++;
+  }
+  newNode = (struct node*)malloc(sizeof(struct node));
+  printf("Enter data to insert after %d pos: ",pos);
+  scanf("%d",&newNode->data);
+  newNode->prev=temp;
+  newNode->next=temp->next;
+  temp->next->prev=newNode;
+  temp->next=newNode;
+  
+
+  
+}
 int main()
 {
   
   create(&head);
  display(head);
-
-
-
-
+//performing insertion
+n
+insertionAtTheBeg(&head);
+display(head);
+n
+insertionAfterPos(&head);
+display(head);
 }
